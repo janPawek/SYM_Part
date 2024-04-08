@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{# {% block title %}Hello HomeStaticController!
+{% endblock %} #}
+
+{% block body %}
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-home"></i> <!-- Home Symbol -->
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li class="dropdown">
+                <a href="#">User <i class="fas fa-caret-down"></i></a> <!-- Dropdown with User -->
+                <ul class="dropdown-content">
+                    <li><a href="#">Update Your Profile</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
+            <li>
+                <input type="text" placeholder="Search"> <!-- Search Input -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-shopping-cart"></i> <!-- Cart Symbol -->
+                    <span class="cart-counter">3</span> <!-- Cart Counter -->
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+{% endblock %}
+

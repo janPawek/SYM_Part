@@ -1,0 +1,28 @@
+Start symfony new project
+
+go to folder where you will create the folder of your project
+right click - choose: Open Git Bash here
+
+symfony new --webapp nameOfYourProject
+
+open your folder with VSC
+
+
+Example: search: create upload-File for symfony 
+https://symfony.com/doc/current/controller/upload_file.html
+
+
+
+Controller 
+create:
+cmd oder terminal in VSC:
+php bin/console make:controller
+
+
+twig language:
+Strg (+) shift (+) p
+put in: Format ... with
+choose: 
+
+show in browser
+symfony serve
