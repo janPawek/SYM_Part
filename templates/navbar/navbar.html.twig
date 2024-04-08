@@ -1,7 +1,16 @@
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/nav.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('JS/navbar.js') }}"></script>
+{% endblock %}
 {% extends 'base.html.twig' %}
 
-{# {% block title %}Hello HomeStaticController!
-{% endblock %} #}
+{% block title %}Navigation Bar
+{% endblock %}
 
 {% block body %}
     <nav class="navbar">

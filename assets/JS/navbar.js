@@ -1,4 +1,4 @@
-// script.js
+// navbar.js
 
 // Toggle dropdown menu
 const dropdown = document.querySelector('.dropdown');

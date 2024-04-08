@@ -1,20 +1,63 @@
+<!-- ? at Serri/trainers:  i/ we don`t need the line 2    #}-->
+{# {% extends 'navbar.html.twig' %} #}
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{{ asset('styles/nav.css') }}">
-        {% block stylesheets %}
-        {% endblock %}
-
+        <title>{% block title %}{% endblock %}</title>
+        <style>
+            {% block stylesheets %}
+            {# <!-- Weitere <link> hier einfügen oder ?-->
+            <!-- ? at Serri/trainers: should i/ we integrate all .css-Files to choose the folder "folder" and not the individual <link rel...>  #}--> #}
+            <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            {% endblock %}
+        </style>
+        <!-- ? at Serri/trainers: which tag should i/ we open  #}-->
+        <!-- ? at Serri/trainers: should i/ we integrate all .js-Files to choose the file "app.js" or each file in folder "JS" -->
         {% block javascripts %}
+        <!-- ? at Serri/trainers: should i/ we integrate all individual .js-files at app.js or the individual way by adding it by own>  #}-->
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
+        <!-- ? at Serri/trainers: which tag should i/ we close  #}-->
     </head>
     <body>
-        {% block body %}{% endblock %}
-        <script src="{{ asset('JS/navbar.js') }}"></script>
+        {% block body %}
+        <!-- Weitere Body-Inhalte hier einfügen -->
+            <header>
+                {% block header %}
+                    <!-- Weitere Header-Inhalte hier einfügen -->
+                        <navbar>
+                            <!-- Weitere navbar-Inhalte hier einfügen  -->
+                            {# <!-- ? at Serri/trainers: {% include 'navbar.html.twig' %}' or {% include "{{ templates('footer.html.twig') }}" %} #}--> #}
+                            {% block navbar %}
+                                {% include 'navbar.html.twig' %}
+                            {% endblock %}
+                        </navbar>
+                {% endblock %}
+            </header>
+            <main>
+                {% block main %}
+                    <!-- Weitere main-Inhalte hier einfügen, wie grid mit loops, etc -->
+                    {% include 'main.html.twig' %}
+                {% endblock %}
+            </main>
+            <footer>
+                {% block footer %}
+                    <!-- Weitere footer-Inhalte hier einfügen -->
+                    {% include "{{ templates('footer.html.twig') }}" %}
+                {% endblock %}
+            </footer>
+            <script>
+                {# <!-- Weitere main-Inhalte hier einfügen --> #}
+                {% block script %}
+                    {% include "{{ asset('JS/base.js') }}">%}
+                    {% include "{{ asset('JS/navbar.js') }}">%}
+                {# <!-- ? at Serri/trainers: or should i/ we integrate all individual .js-Files to app.js and integrate only app.js-File -->  #}
+                {# <!-- ? at Serri/trainers: what about the controllers.json -->  #}
+                {% endblock %}
+            <script>
+        {% endblock %}
     </body>
 </html>
